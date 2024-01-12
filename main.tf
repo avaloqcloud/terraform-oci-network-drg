@@ -1,5 +1,9 @@
-# Your 'main.tf' code goes here.
+resource "oci_core_drg" "this" {
+  #Required
+  compartment_id = var.drg.compartment_id
 
-# You should create additional files if relevant for your project:
-# * 'outputs.tf' to declare your output variables
-# * 'data.tf' to declare your data sources
+  #Optional
+  defined_tags  = var.drg.defined_tags
+  display_name  = var.drg.display_name
+  freeform_tags = var.drg.freeform_tags
+}
